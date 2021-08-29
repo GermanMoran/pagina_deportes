@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+
+
+    <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+    <link href="favicon.ico" rel="shortcut icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!--Hoja de estilos externa-->
+    <link rel="stylesheet" href="css/estilos.css">
+
+
+    <title>Practica FrontEnd</title>
+  </head>
+
+
+  <body>
+
+ <!--==========================
+  Sección de encabezado
+  ============================-->
+
+  <ul class="nav nav-tabs">
+
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">Home</a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link" href="Liga.html">Ligas</a>
+    </li>
+    <li class="nav-item  active" aria-current="page">
+      <a class="nav-link" href="#">Equipos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Creditos</a>
+    </li>
+
+  </ul>
+
+
+
+  <!-- Seccion para escoger los diferentes equipos que forman parte de la Liga-->  
+  <section id="Selecccion_Equipo">
+    <div class="container">
+      <!--Titulo-->
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Equipos Internacionales</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description">Seleccione el equipo del Menu</p>
+        </div>
+      </div>
+
+      <!--Selector de Equipos
+       - Se seleccionaron los Equipos mas importantes de la API
+       - El valor de value hace referencia a la team_key que es una parametro que necesita la API para traer 
+       - la informacion
+      -->
+      <div class="row"> 
+        <div class="col-md-12">
+          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="sel_Equipo" onchange="Ligaseleccionada();">
+            <option selected>Open this select menu</option>
+            <option value="96">Juventus</option>  
+            <option value="95">Zenit</option>
+            <option value="100">Paris Saint Germain </option>
+            <option value="101">RB Leipzig </option>
+            <option value="102">Manchester United </option>
+            <option value="150">PSV</option> 
+            <option value="151">Granada</option> 
+            <option value="152">Napoli</option> 
+            <option value="192">Galatasaray</option> 
+          </select>
+        </div>
+      </div>
+
+      <!-- En esta Tabla se muestran todos los jugadores asociados al Equipo Seleccionado-->
+      <div class="row">
+        <div class="col-md-8">
+          <table class="table table-dark  table-hover">
+            <thead>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Posicion</th>
+            </thead>
+            <tbody id="datos_jugadores">
+    
+            </tbody>
+          </table>
+        </div>
+        <!-- Se muestra informacion del Equipo como : Logo, entrenador, numero de Jugadores-->
+        <div class="col-md-4">
+          <div id="mostrarE">
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12"></div>
+        <div id="con">
+
+        </div>
+      </div>
+    </div>
+  </section>
+   
+  <!--
+     <div class="container">
+    <div id="mostrarE">
+            
+    </div>
+  </div>
+
+
+
+
+
+   
+     <div class="container">
+      <table class="table table-dark  table-hover">
+        <thead>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Posicion</th>
+        </thead>
+        <tbody id="datos_jugadores">
+
+        </tbody>
+      </table>
+    </div>
+  -->
+ 
+
+
+
+
+
+   
+
+<!--==========================
+  Pie de Pagina
+============================-->
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="contac">
+              <p><strong>email: </strong>homerogpm@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+      
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="js/prueba.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
