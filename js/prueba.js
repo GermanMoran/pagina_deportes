@@ -1,23 +1,12 @@
-//https://countrystatecity.in/docs/api/all-countries/
 
-
-//const url = 'https://apiv2.allsportsapi.com/football/?met=Teams&teamId=4&APIkey=0d1b2d8720f8b84e3e21b3d77480dd5cf5c514afda600067292141e410d05e43'
-
-
-
-//fetch(url)
-//.then(response => response.json())
-//.then(data => mostrarJugadores(data))
-//.catch(error => console.log(error))
-
-
+//onclick="consultarJugador(event);"
 const mostrarJugadores = (data) => {
     console.log(data)
     console.log(data.result[0].players.length)
     pos = 0;
     let nuevoJugador = "";
     for(let i=0; i<data.result[pos].players.length; i++){
-        nuevoJugador+=`<tr onclick="consultarJugador(event);"><td>${data.result[pos].players[i].player_name}</td><td>${data.result[pos].players[i].player_age}</td><td>${data.result[pos].players[i].player_type}</td></tr>`
+        nuevoJugador+=`<tr><td>${data.result[pos].players[i].player_name}</td><td>${data.result[pos].players[i].player_age}</td><td>${data.result[pos].players[i].player_type}</td></tr>`
     }
 
     document.querySelector("#datos_jugadores").innerHTML=nuevoJugador;
@@ -34,6 +23,7 @@ const buccarLiga = (Id_liga) => {
     .then(data => {
         InformacionEquipo(data);
         mostrarJugadores(data);
+        
         //console.log(data.result[0].team_name);
     })
     
@@ -81,10 +71,93 @@ const  Ligaseleccionada = () => {
 }
 
 
-const consultarJugador = (event) => {
-    console.log(event)
+
+
+
     //document.querySelector('#con').innerHTML='Holamundo';
-}
+
+
+
+/**
+ *   se ejecuta la primera Funcion
+*/
 
 Ligaseleccionada()
+
+let table_jugadores = document.getElementById("table1")
+table_jugadores.addEventListener("click", getData);
+
+function getData(){
+    let tds = event.path[1].children
+    let datos = []
+    for (let i = 0; i < tds.length; i++) {
+        datos.push(tds[i].innerText)
+    }
+
+    nJugador = datos[0];
+    console.log(datos[0]);
+
+    buscarJugador(nJugador)
+    console.log("Aqui Fue")
+
+
+}
+
+
+
+const buscarJugador = (nJugador) => {
+
+    // Extraiemos el equipos al que pertenece el jugador segun el item select
+    valor_select = document.querySelector('#sel_Equipo');
+    const valorI = parseInt(valor_select.value);
+    console.log(valorI);
+    const url = `https://apiv2.allsportsapi.com/football/?met=Teams&teamId=${valorI}&APIkey=0d1b2d8720f8b84e3e21b3d77480dd5cf5c514afda600067292141e410d05e43`
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+ 
+        console.log(data.result[0].players.length)
+        //console.log(data.result[0].players[0].player_name)
+
+        //for(let i=0; i<data.result[0].players.length; i++){
+
+        //}
+
+        const array_jugadores = data.result[0].players;
+        console.log(array_jugadores)
+  
+        const Jug = array_jugadores.find(element => {
+        return element.player_name == nJugador;
+        
+        });
+        console.log(Jug);
+
+        
+        var JugadorSele = `
+        <div class="card" style="width: 18rem;">
+            <img src="${Jug.player_image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">${Jug.player_name}</h5>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">Edad:${Jug.player_age}</li>
+                <li class="list-group-item">Numero Camiseta:${Jug.player_number}</li>
+                <li class="list-group-item">Posicion:${Jug.player_type}</li>
+                <li class="list-group-item">Posicion: ${Jug.player_goals}</li>
+                </ul>
+                </div>
+        </div>`;
+    
+
+        document.querySelector("#con").innerHTML=JugadorSele;
+          
+    })
+    
+
+    //const array_jugadores = data.result[0].players;
+  
+    //const a = array_jugadores.find(element => {
+    //return element.player_name = getData();
+    //});
+
+}
 
