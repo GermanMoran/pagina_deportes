@@ -27,7 +27,7 @@
   <body>
 
  <!--==========================
-  Sección de encabezado
+  Sección Encabezado Menu bar
   ============================-->
 
   <ul class="nav nav-tabs">
@@ -38,13 +38,12 @@
     <li class="nav-item ">
       <a class="nav-link" href="Liga.html">Ligas</a>
     </li>
-    <li class="nav-item  active" aria-current="page">
-      <a class="nav-link" href="#">Equipos</a>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Equipos</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Creditos</a>
+      <a class="nav-link" href="creditos.html">Creditos</a>
     </li>
-
   </ul>
 
 
@@ -62,14 +61,14 @@
       </div>
 
       <!--Selector de Equipos
-       - Se seleccionaron los Equipos mas importantes de la API
+       - Se seleccionaron algunos de los Equipos mas importantes de la API, debido aque mucha informacion
        - El valor de value hace referencia a la team_key que es una parametro que necesita la API para traer 
        - la informacion
       -->
       <div class="row"> 
         <div class="col-md-12">
           <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="sel_Equipo" onchange="Ligaseleccionada();">
-            <option selected>Open this select menu</option>
+            <option selected>Seleccione el Equipo</option>
             <option value="96">Juventus</option>  
             <option value="95">Zenit</option>
             <option value="100">Paris Saint Germain </option>
@@ -97,6 +96,7 @@
             </tbody>
           </table>
         </div>
+
         <!-- Se muestra informacion del Equipo como : Logo, entrenador, numero de Jugadores-->
         <div class="col-md-4">
           <div id="mostrarE">
@@ -110,15 +110,15 @@
   <!-- Seccion para mostrar un jugador determinado haciendo click sobre la Tabla-->
   <section >
     <div class="container">
-
+      <!--Titulo de la seccion-->
       <div class="row">
         <div class="col-md-12">
           <h3 class="section-title">Caracteristicas del Jugador</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">Seleccione el jugador en la Tabla</p>
+          <p class="section-description">Seleccione el jugador de la Tabla</p>
         </div>
       </div>
-      
+      <!--Informacion de Jugador seleccionado sobre la Tabla-->
       <div class="d-flex justify-content-center">
         <div class="row">
           <div class="col-md-12"></div>
@@ -132,38 +132,6 @@
   </section>
 
    
-  <!--
-     <div class="container">
-    <div id="mostrarE">
-            
-    </div>
-  </div>
-
-
-
-
-
-   
-     <div class="container">
-      <table class="table table-dark  table-hover">
-        <thead>
-            <th>Nombre</th>
-            <th>Edad</th>
-            <th>Posicion</th>
-        </thead>
-        <tbody id="datos_jugadores">
-
-        </tbody>
-      </table>
-    </div>
-  -->
- 
-
-
-
-
-
-   
 
 <!--==========================
   Pie de Pagina
@@ -173,7 +141,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="contac">
-              <p><strong>email: </strong>homerogpm@gmail.com</p>
+              <p><strong>Autor: </strong>German Homero Moran</p>
             </div>
           </div>
         </div>

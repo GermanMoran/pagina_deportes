@@ -22,9 +22,6 @@ fetch(url)
         $('#pintar').append(contenido) 
     }
    
-    
-    //console.log(data)
-
 })
 
 

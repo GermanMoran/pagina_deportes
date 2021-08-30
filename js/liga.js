@@ -1,6 +1,6 @@
-//https://countrystatecity.in/docs/api/all-countries/
 
 
+// Llave obtenida de la API
 const url = 'https://apiv2.allsportsapi.com/football/?met=Countries&APIkey=0d1b2d8720f8b84e3e21b3d77480dd5cf5c514afda600067292141e410d05e43'
 
 
@@ -14,7 +14,7 @@ fetch(url)
      * España: 3
      * Alemania 4
      * Italia:5
-     * Francia:6
+     * Francia:6s
      * Argentina:14
      * Inglaterra:44
      * Portugal:92
@@ -42,7 +42,6 @@ fetch(url)
             <div class="card-body">
                 <h5 class="card-title">${data.result[i].country_name}</h5>
                 <p class="card-text"></p>
-                <a href="#" class="btn btn-primary">Mas</a>
             </div>
             </div>
             </div>
