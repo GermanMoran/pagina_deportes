@@ -6,7 +6,6 @@ h1 {
     background-color: aquamarine;
 }
 
-
   /*--------------------------------------------------------------
   #  Estilos  Bienvenida- Fondo de la pagina
   --------------------------------------------------------------*/
@@ -14,10 +13,9 @@ h1 {
     display: table;
     width: 100%;
     height: 100vh;
-    background: url(../img/fondoFutbol.jpg) top center fixed;
+    background: url(../img/fondo_futbol.jpg) top center fixed;
     background-size: cover;
   }
-
 
     /*--------------------------------------------------------------
     #  Estilos Pie de pagina
@@ -28,23 +26,12 @@ h1 {
     color: #fff;
     }
 
-    #footer .copyright {
-    text-align: center;
-    }
-
     #footer .contac p {
     text-align: center;
     color: #ccc;
     }
 
-    #footer .phone p {
-    text-align: center;
-    color: #ccc;
-    }
   
-
-  
-
   /*--------------------------------------------------------------
   # Estilos de la pagina Home, acerca del Futtbol
   --------------------------------------------------------------*/
@@ -88,8 +75,6 @@ h1 {
   }
 
 
-
- 
   /*--------------------------------------------------------------
   # Estilos Carrusel de imagenes
   --------------------------------------------------------------*/
@@ -140,7 +125,6 @@ h1 {
  }
 
 
-
    /*--------------------------------------------------------------
   # Estilos secciones de de encabezado de Cada pagina
   --------------------------------------------------------------*/
@@ -168,9 +152,6 @@ h1 {
   }
   
 
-
-
-  
   /* Seccion de las ligas
    --------------------------------*/
    #p_ligas {
@@ -255,5 +236,4 @@ h1 {
     margin-top: 20px;
     margin-bottom: 20px;
    
-
   }

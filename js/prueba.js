@@ -1,5 +1,5 @@
 
-//onclick="consultarJugador(event);"
+// Funcion para mostrar lod jugadores dentro de la tabla
 const mostrarJugadores = (data) => {
     console.log(data)
     console.log(data.result[0].players.length)
@@ -13,9 +13,7 @@ const mostrarJugadores = (data) => {
 
 }
 
-
-
-
+// Funcion para buscar el equipo de acuerdo a IDeQUIPO 
 const buccarLiga = (Id_liga) => {
     const url = `https://apiv2.allsportsapi.com/football/?met=Teams&teamId=${Id_liga}&APIkey=0d1b2d8720f8b84e3e21b3d77480dd5cf5c514afda600067292141e410d05e43`
     fetch(url)
@@ -25,13 +23,12 @@ const buccarLiga = (Id_liga) => {
         mostrarJugadores(data);
         
         //console.log(data.result[0].team_name);
-    })
-    
+    })   
     .catch(error => console.log(error))
 }
 
 
-
+// Funcion para obtener Informacion del equipo
 const InformacionEquipo = (data) => {
     console.log(data)
     pos = 0;
@@ -54,7 +51,7 @@ const InformacionEquipo = (data) => {
 
 
 
-// Equipo Seleccionado
+// Funcion para definir el equipo que se ha seleccionado
 const  Ligaseleccionada = () => {
     // Obtenemos la identificacion del elemento
     let item_Equipo = document.querySelector('#sel_Equipo');
@@ -69,13 +66,6 @@ const  Ligaseleccionada = () => {
     buccarLiga(valor)
     return valor; 
 }
-
-
-
-
-
-    //document.querySelector('#con').innerHTML='Holamundo';
-
 
 
 /**
@@ -93,20 +83,16 @@ function getData(){
     for (let i = 0; i < tds.length; i++) {
         datos.push(tds[i].innerText)
     }
-
     nJugador = datos[0];
     console.log(datos[0]);
-
+    // Esta Funcion permite buscar el jugador deacuerdo a su nombre
     buscarJugador(nJugador)
-    console.log("Aqui Fue")
-
-
+   
 }
 
 
 
 const buscarJugador = (nJugador) => {
-
     // Extraiemos el equipos al que pertenece el jugador segun el item select
     valor_select = document.querySelector('#sel_Equipo');
     const valorI = parseInt(valor_select.value);
@@ -117,12 +103,6 @@ const buscarJugador = (nJugador) => {
     .then(data => {
  
         console.log(data.result[0].players.length)
-        //console.log(data.result[0].players[0].player_name)
-
-        //for(let i=0; i<data.result[0].players.length; i++){
-
-        //}
-
         const array_jugadores = data.result[0].players;
         console.log(array_jugadores)
   
@@ -152,12 +132,6 @@ const buscarJugador = (nJugador) => {
           
     })
     
-
-    //const array_jugadores = data.result[0].players;
-  
-    //const a = array_jugadores.find(element => {
-    //return element.player_name = getData();
-    //});
 
 }
 
