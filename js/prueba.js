@@ -134,15 +134,15 @@ const buscarJugador = (nJugador) => {
 
         
         var JugadorSele = `
-        <div class="card" style="width: 18rem;">
+        <div class="card text-center aling-items-center" style="width: 18rem;">
             <img src="${Jug.player_image}" class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">${Jug.player_name}</h5>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item">Edad:${Jug.player_age}</li>
-                <li class="list-group-item">Numero Camiseta:${Jug.player_number}</li>
-                <li class="list-group-item">Posicion:${Jug.player_type}</li>
-                <li class="list-group-item">Posicion: ${Jug.player_goals}</li>
+                <li class="list-group-item">Age: ${Jug.player_age}</li>
+                <li class="list-group-item">T-shirt number: ${Jug.player_number}</li>
+                <li class="list-group-item">Positon: ${Jug.player_type}</li>
+                <li class="list-group-item">Number of Goals: ${Jug.player_goals}</li>
                 </ul>
                 </div>
         </div>`;
