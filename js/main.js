@@ -8,7 +8,7 @@ fetch(url)
     
 
     for (let i=0; i<10; i++){
-        console.log(data.result[i])
+        //console.log(data.result[i])
         var contenido=`
         <div class="card" style="width: 18rem;">
             <img src="${data.result[i].league_logo}" class="card-img-top" alt="...">

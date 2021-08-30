@@ -24,10 +24,10 @@ fetch(url)
      * 
      */
     paises = ["3","4","5","6","14","27","44","82","92"]
-    console.log(paises[0])
-    console.log(data.result)
-    console.log(data.result[0].country_key)
-    console.log(data.result.length)
+    //console.log(paises[0])
+    //console.log(data.result)
+    //console.log(data.result[0].country_key)
+    //console.log(data.result.length)
 
     for(let i=0; i<data.result.length; i++){
         //console.log(data.result[i].country_key)

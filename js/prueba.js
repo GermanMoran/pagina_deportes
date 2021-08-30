@@ -1,8 +1,8 @@
 
 // Funcion para mostrar lod jugadores dentro de la tabla
 const mostrarJugadores = (data) => {
-    console.log(data)
-    console.log(data.result[0].players.length)
+    //console.log(data)
+    //console.log(data.result[0].players.length)
     pos = 0;
     let nuevoJugador = "";
     for(let i=0; i<data.result[pos].players.length; i++){
@@ -30,7 +30,7 @@ const buccarLiga = (Id_liga) => {
 
 // Funcion para obtener Informacion del equipo
 const InformacionEquipo = (data) => {
-    console.log(data)
+    //console.log(data)
     pos = 0;
     var EquipoSele = `
     <div class="card" style="width: 18rem;">
@@ -60,7 +60,7 @@ const  Ligaseleccionada = () => {
     const opcionSeleccionada = item_Equipo.options[indice];
     console.log(opcionSeleccionada.value)
     let valor = parseInt(opcionSeleccionada.value)
-    console.log(typeof(valor))
+    //console.log(typeof(valor))
 
     // Se llama a la funcion Buscar Liga
     buccarLiga(valor)
@@ -102,9 +102,9 @@ const buscarJugador = (nJugador) => {
     .then(response => response.json())
     .then(data => {
  
-        console.log(data.result[0].players.length)
+        //console.log(data.result[0].players.length)
         const array_jugadores = data.result[0].players;
-        console.log(array_jugadores)
+        //console.log(array_jugadores)
   
         const Jug = array_jugadores.find(element => {
         return element.player_name == nJugador;
